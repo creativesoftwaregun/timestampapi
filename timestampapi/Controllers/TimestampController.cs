@@ -34,7 +34,7 @@ namespace timestampapi.Controllers
         return Content("{ error: Invalid Date }");
       }
 
-      string dateFormat = "ddd, dd MMM yyy HH':'mm':'ss 'GMT'";
+      string dateFormat = "ddd, dd MMM yyyy HH':'mm':'ss 'GMT'";
       string utcDateString = dateVal.Value.ToUniversalTime().ToString(dateFormat); ;
       string retVal = $"{{ \"unix\": {UnixTimeNow()}, \"utc\": \"{utcDateString}\" }}";
 
